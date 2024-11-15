@@ -8,5 +8,5 @@ platformdirs==2.6.2
 sqlparse==0.4.3
 tzdata==2022.7
 virtualenv==20.17.1
-crispy-forms==1.14.0
-crispy-bootstrap4==0.7.0
+crispy-forms
+crispy-bootstrap4
