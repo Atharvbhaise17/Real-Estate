@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Listing Details{% endblock title %}
+
+{% block content %}
+<div class="card shadow p-4">
+    <div class="card-body">
+        <h3 class="card-title">{{ listing.title }}</h3>
+        <p class="card-text">Price: ${{ listing.price }}</p>
+        <p class="card-text">Address: {{ listing.address }}</p>
+        <img src="{{ listing.image.url }}" class="img-fluid my-3 rounded" alt="Listing Image">
+
+        {% if request.user.is_staff %}
+        <div class="mt-4">
+            <a href="{% url 'listing_edit' listing.id %}" class="btn btn-outline-secondary me-2">Edit</a>
+            <a href="{% url 'listing_delete' listing.id %}" class="btn btn-outline-danger">Delete</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
